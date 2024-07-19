@@ -15,25 +15,25 @@ function fnSqlArticleList($flg, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleN
 	$sql .= " FROM TBLARTICLE";
 	$sql .= " WHERE DEL = $sDel";
 	if ($sArticle) {
-		$sql .= " OR ARTICLE LIKE '%$sArticle$%'";
+		$sql .= " AND ARTICLE LIKE '%$sArticle%'";
 	}
 	if ($sRoom) {
-		$sql .= " OR ROOM LIKE '%$sRoom%'";
+		$sql .= " AND ROOM LIKE '%$sRoom%'";
 	}
 	if ($sKeyPlace) {
-		$sql .= " OR KEYPLACE LIKE '%$sKeyPlace%'";
+		$sql .= " AND KEYPLACE LIKE '%$sKeyPlace%'";
 	}
 	if ($sArticleNote) {
-		$sql .= " OR ARTICLENOTE LIKE '%$sArticleNote%'";
+		$sql .= " AND ARTICLENOTE LIKE '%$sArticleNote%'";
 	}
 	if ($sKeyBox) {
-		$sql .= " OR KEYBOX LIKE '%l$sKeyBox%'";
+		$sql .= " AND KEYBOX LIKE '%$sKeyBox%'";
 	}
 	if ($sDrawing) {
-		$sql .= " OR DRAWING LIKE '%$sDrawing%'";
+		$sql .= " AND DRAWING LIKE '%$sDrawing%'";
 	}
 	if ($sSellCharge) {
-		$sql .= " OR SELLCHARGE LIKE '%$sSellCharge%'";
+		$sql .= " AND SELLCHARGE LIKE '%$sSellCharge%'";
 	}
 	if ($orderBy) {
 		$sql .= " ORDER BY $orderBy $orderTo";
@@ -70,7 +70,7 @@ function fnSqlArticleUpdate($articleNo, $article, $room, $keyPlace, $address, $a
 	$sql .= " SET ARTICLE = '$article'";
 	$sql .= ",ROOM = '$room'";
 	$sql .= ",KEYPLACE = '$keyPlace'";
-	$sql .= ",ADDRESS = '$address";
+	$sql .= ",ADDRESS = '$address'";
 	$sql .= ",ARTICLENOTE = '$articleNote'";
 	$sql .= ",KEYBOX = '$keyBox'";
 	$sql .= ",DRAWING = '$drawing'";
@@ -110,7 +110,7 @@ function fnSqlArticleInsert($articleNo, $article, $room, $keyPlace, $address, $a
 function fnSqlArticleDelete($articleNo)
 {
 	$sql  = "UPDATE TBLARTICLE";
-	$sql .= " SET DEL = 0";
+	$sql .= " SET DEL = -1";
 	$sql .= ",UPDT = CURRENT_TIMESTAMP";
 	$sql .= " WHERE ARTICLENO = '$articleNo'";
 

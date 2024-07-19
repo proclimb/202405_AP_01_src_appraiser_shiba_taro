@@ -44,7 +44,6 @@ function subArticle()
 		<input type="hidden" name="sPage" value="<?php print $sPage ?>" />
 		<input type="hidden" name="articleNo" />
 		<input type="hidden" name="sName" />
-		<input type="hidden" name="sRoom" />
 
 		<a href="javascript:form.act.value='articleEdit';form.submit();"><img src="./images/btn_enter.png"></a>
 
@@ -64,7 +63,7 @@ function subArticle()
 				</tr>
 				<tr>
 					<th>部屋番号</th>
-					<td><input type="text" name="sRoom" value="" size="30" /><?php print $sArticle ?></td>
+					<td><input type="text" name="sRoom" value="<?php print $sArticle ?>" size="30" /></td>
 					<th>3Dパース</th>
 					<td><input type="text" name="sDrawing" value="<?php print $sDrawing ?>" size="30" /></td>
 				</tr>
@@ -122,14 +121,14 @@ function subArticle()
 				$sellCharge  = $row["SELLCHARGE"];
 			?>
 				<tr>
-					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='articleEdit';form.articleNo.value='<?php print $rrticleNo ?>';form.submit();"><?php print $article ?></a></td>
+					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='articleEdit';form.articleNo.value=<?php print $articleNo ?>;form.submit();"><?php print $article ?></a></td>
 					<td class="list_td<?php print $i ?>"><?php print $room ?></td>
-					<td class="list_td<?php print $i ?>"><?php print $drawing ?></td>
 					<td class="list_td<?php print $i ?>"><?php print $keyPlace ?></td>
 					<td class="list_td<?php print $i ?>"><?php print $articleNote ?></td>
-					<td class="list_td<?php print $i ?>"><?php print $room ?></td>
+					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='fManager';form.sName.value='<?php print $article ?>';form.sRoom.value='<?php print $room ?>';form.submit();">表示</a></td>
+					<td class="list_td<?php print $i ?>"><?php print $keyBox ?></td>
+					<td class="list_td<?php print $i ?>"><?php print $drawing ?></td>
 					<td class="list_td<?php print $i ?>"><?php print $sellCharge ?></td>
-					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='stock';form.sName.value='<?php print $article ?>';form.sRoom.value='<?php print $room ?>';form.submit();">表示</a></td>
 				</tr>
 			<?php
 				$i = ($i + 1) % 3;
