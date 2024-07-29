@@ -136,12 +136,14 @@ function subGuideView($param)
 			$i = 0;
 			while ($row = mysqli_fetch_array($res)) {
 				$guideNo      = htmlspecialchars($row["GUIDENO"]);
+				$articleNo    = htmlspecialchars($row["ARTICLENO"]);
 				$content      = htmlspecialchars($row["CONTENT"]);
 				$guideStartDT = htmlspecialchars($row["GUIDESTARTDT"]);
 				$guideEndDT   = htmlspecialchars($row["GUIDEENDDT"]);
 				$guideStartTM = htmlspecialchars($row["GUIDESTARTTM"]);
 				$guideEndTM   = htmlspecialchars($row["GUIDEENDTM"]);
-				$articleNo    = htmlspecialchars($row["ARTICLENO"]);
+				$article      = htmlspecialchars($row["ARTICLE"]);
+				$room         = htmlspecialchars($row["ROOM"]);
 				$name         = htmlspecialchars($row["NAME"]);
 				$fax          = htmlspecialchars($row["FAX"]);
 				$result       = htmlspecialchars($row["RESULT"]);
@@ -149,8 +151,7 @@ function subGuideView($param)
 				$accept       = htmlspecialchars($row["ACCEPT"]);
 				$exam         = htmlspecialchars($row["EXAM"]);
 				$purchase     = htmlspecialchars($row["PURCHASE"]);
-				$article      = htmlspecialchars($row["ARTICLE"]);
-				$room         = htmlspecialchars($row["ROOM"]);
+
 
 			?>
 				<tr>
@@ -376,20 +377,20 @@ function subGuideChoiceView($param)
 											</td>
 											<td class="list_td<?php print $i ?>"><?php print $row["article"] ?></td>
 											<td class="list_td<?php print $i ?>"><?php print $row["room"] ?></td>
-											<td class="list_td<?php print $i ?>">
-												<a href="#" onclick="window.open('./index.php?act=guideShowKey&articleNo=<?php print $row["articleNo"] ?>','情報詳細','width=500,height=400');return false;">鍵詳細</a>
-											</td>
-										</tr>
-								<?php
+											<td class="list_td0"></td>
+											<a href="#" onclick="window.open('./index.php?act=guideShowKey&articleNo=<?php print $row["articleNo"] ?>','情報詳細','width=500,height=400');return false;">鍵詳細</a>
+					</td>
+				</tr>
+		<?php
 										$i = ($i + 1) % 2;
 									}
 								}
-								?>
-							</table>
-							<a href="javascript:fnGuideRegistCheck();"><img src="./images/btn_enter.png"></a>
-						</div>
-					</td>
-				</tr>
+		?>
+			</table>
+			<a href="javascript:fnGuideRegistCheck();"><img src="./images/btn_enter.png"></a>
+			</div>
+			</td>
+			</tr>
 			</table>
 		<?php
 		}
