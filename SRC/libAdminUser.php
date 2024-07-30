@@ -23,7 +23,6 @@ function subAdminUser()
 				<tr>
 					<th class="list_head">名前</th>
 					<th class="list_head">ユーザーID</th>
-					<th class="list_head">パスワード</th>
 					<th class="list_head">所属</th>
 					<th class="list_head">削除</th>
 				</tr>
@@ -42,7 +41,6 @@ function subAdminUser()
 					<tr>
 						<td class="list_td<?php print $i; ?>"><a href="javascript:form.act.value='adminUserEdit';form.userNo.value=<?php print $userNo; ?>;form.submit();"><?php print $name; ?></a></td>
 						<td class="list_td<?php print $i; ?>"><?php print $id; ?></td>
-						<td class="list_td<?php print $i; ?>"><?php print $password; ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print fnAuthorityName($authority); ?></td>
 						<td class="list_td<?php print $i; ?>">
 							<?php if ($userNo > 1) { ?>
