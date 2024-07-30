@@ -42,7 +42,7 @@ function fnSqlAdminUserEdit($userNo)
 //
 function fnSqlAdminUserUpdate($userNo, $name, $id, $password, $authority)
 {
-    $pass = addslashes(hash('adler32', $password));
+    $pass = $password;
     $sql = "UPDATE TBLUSER";
     $sql .= " SET NAME = '$name'";
     $sql .= ",ID = '$id'";
@@ -59,7 +59,7 @@ function fnSqlAdminUserUpdate($userNo, $name, $id, $password, $authority)
 //
 function fnSqlAdminUserInsert($userNo, $name, $id, $password, $authority)
 {
-    $pass = addslashes(hash('adler32', $password));
+    $pass = $password;
     $sql = "INSERT INTO TBLUSER(";
     $sql .= "USERNO,NAME,ID,PASSWORD,AUTHORITY,INSDT,UPDT,DEL";
     $sql .= ")VALUES(";
