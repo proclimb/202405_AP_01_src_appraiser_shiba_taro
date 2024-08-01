@@ -130,7 +130,7 @@ function subArticle()
 					<td class="list_td<?php print $i ?>"><?php print $sellCharge ?></td>
 				</tr>
 			<?php
-				$i = ($i + 1) % 3;
+				$i = ($i + 1) % 2;
 			}
 			?>
 		</table>
@@ -148,14 +148,14 @@ function subArticleEdit()
 {
 	$conn = fnDbConnect();
 
-	$articleNo   = htmlspecialchars($row["ARTICLENO"]);
-	$article     = htmlspecialchars($row["ARTICLE"]);
-	$room        = htmlspecialchars($row["ROOM"]);
-	$keyPlace    = htmlspecialchars($row["KEYPLACE"]);
-	$articleNote = htmlspecialchars($row["ARTICLENOTE"]);
-	$keyBox      = htmlspecialchars($row["KEYBOX"]);
-	$drawing     = htmlspecialchars($row["DRAWING"]);
-	$sellCharge  = htmlspecialchars($row["SELLCHARGE"]);
+	$articleNo   = htmlspecialchars($_REQUEST["ARTICLENO"]);
+	$sArticle     = htmlspecialchars($_REQUEST["ARTICLE"]);
+	$sRoom       = htmlspecialchars($_REQUEST["ROOM"]);
+	$sKeyPlace   = htmlspecialchars($_REQUEST["KEYPLACE"]);
+	$sArticleNote = htmlspecialchars($_REQUEST["ARTICLENOTE"]);
+	$sKeyBox      = htmlspecialchars($_REQUEST["KEYBOX"]);
+	$drawing     = htmlspecialchars($_REQUEST["DRAWING"]);
+	$sSellCharge  = htmlspecialchars($_REQUEST["SELLCHARGE"]);
 
 	$orderBy = $_REQUEST['orderBy'];
 	$orderTo = $_REQUEST['orderTo'];
@@ -185,10 +185,12 @@ function subArticleEdit()
 		$btnImage = 'btn_enter.png';
 	}
 
-	subMenu2();
+	subMenu();
 ?>
 	<script type="text/javascript" src="./js/article.js"></script>
+	<script>
 
+	</script>
 	<h1>物件<?php print $purpose ?></h1>
 
 	<form name="form" id="form" action="index.php" method="post">
