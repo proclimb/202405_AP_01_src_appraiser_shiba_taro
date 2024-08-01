@@ -234,7 +234,7 @@ if ($_COOKIE['cUserNo'] != '' && $_COOKIE['authority'] != '') {
         case 'fTitleEditComplete':
         case 'fTitleDelete':
         case 'fTitleItemEdit':
-            Ftitle_control();
+            FTitle_control();
             break;
     }
     ?>

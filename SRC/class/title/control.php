@@ -1,13 +1,13 @@
 <?php
-require ('class/title/logic.php');
-require ('class/title/model.php');
-require ('class/title/view.php');
+require('class/title/logic.php');
+require('class/title/model.php');
+require('class/title/view.php');
 
-function fTitle_control()
+function FTitle_control()
 {
     switch ($_REQUEST['act']) {
 
-        // 案内管理一覧
+            // 案内管理一覧
         case 'fTitle':
         case 'fTitleSearch':
             subFTitle();
