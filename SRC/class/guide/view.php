@@ -377,20 +377,20 @@ function subGuideChoiceView($param)
 											</td>
 											<td class="list_td<?php print $i ?>"><?php print $row["article"] ?></td>
 											<td class="list_td<?php print $i ?>"><?php print $row["room"] ?></td>
-											<td class="list_td0"></td>
-											<a href="#" onclick="window.open('./index.php?act=guideShowKey&articleNo=<?php print $row["articleNo"] ?>','情報詳細','width=500,height=400');return false;">鍵詳細</a>
-					</td>
-				</tr>
-		<?php
+											<td class="list_td">
+												<a href="#" onclick="window.open('./index.php?act=guideShowKey&articleNo=<?php print $row['articleNo'] ?>','情報詳細','width=500,height=400');return false;" />鍵詳細</a>
+											</td>
+										</tr>
+								<?php
 										$i = ($i + 1) % 2;
 									}
 								}
-		?>
-			</table>
-			<a href="javascript:fnGuideRegistCheck();"><img src="./images/btn_enter.png"></a>
-			</div>
-			</td>
-			</tr>
+								?>
+							</table>
+							<a href="javascript:fnGuideRegistCheck();"><img src="./images/btn_enter.png"></a>
+						</div>
+					</td>
+				</tr>
 			</table>
 		<?php
 		}
