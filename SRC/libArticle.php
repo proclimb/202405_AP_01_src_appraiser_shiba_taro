@@ -148,14 +148,14 @@ function subArticleEdit()
 {
 	$conn = fnDbConnect();
 
-	$articleNo   = htmlspecialchars($_REQUEST["ARTICLENO"]);
-	$sArticle     = htmlspecialchars($_REQUEST["ARTICLE"]);
-	$sRoom       = htmlspecialchars($_REQUEST["ROOM"]);
-	$sKeyPlace   = htmlspecialchars($_REQUEST["KEYPLACE"]);
-	$sArticleNote = htmlspecialchars($_REQUEST["ARTICLENOTE"]);
-	$sKeyBox      = htmlspecialchars($_REQUEST["KEYBOX"]);
-	$drawing     = htmlspecialchars($_REQUEST["DRAWING"]);
-	$sSellCharge  = htmlspecialchars($_REQUEST["SELLCHARGE"]);
+	$sDel         = htmlspecialchars($_REQUEST['sDel']);
+	$sArticle     = htmlspecialchars($_REQUEST['sArticle']);
+	$sRoom        = htmlspecialchars($_REQUEST['sRoom']);
+	$sKeyPlace    = htmlspecialchars($_REQUEST['sKeyPlace']);
+	$sArticleNote = htmlspecialchars($_REQUEST['sArticleNote']);
+	$sKeyBox      = htmlspecialchars($_REQUEST['sKeyBox']);
+	$drawing     = htmlspecialchars($_REQUEST["drawing"]);
+	$sSellCharge  = htmlspecialchars($_REQUEST['sSellCharge']);
 
 	$orderBy = $_REQUEST['orderBy'];
 	$orderTo = $_REQUEST['orderTo'];
@@ -168,15 +168,16 @@ function subArticleEdit()
 		$res = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_array($res);
 
+		$del         = htmlspecialchars($row["DEL"]);
 		$article     = htmlspecialchars($row["ARTICLE"]);
 		$room        = htmlspecialchars($row["ROOM"]);
 		$keyPlace    = htmlspecialchars($row["KEYPLACE"]);
 		$address     = htmlspecialchars($row["ADDRESS"]);
 		$articleNote = htmlspecialchars($row["ARTICLENOTE"]);
 		$keyBox      = htmlspecialchars($row["KEYBOX"]);
-		$drawing     = htmlspecialchars($row["DRAWING"]);
+		$drawing     = htmlspecialchars($row["drawing"]);
 		$sellCharge  = htmlspecialchars($row["SELLCHARGE"]);
-		$del         = htmlspecialchars($row["DEL"]);
+
 
 		$purpose  = '更新';
 		$btnImage = 'btn_load.png';
@@ -188,9 +189,6 @@ function subArticleEdit()
 	subMenu();
 ?>
 	<script type="text/javascript" src="./js/article.js"></script>
-	<script>
-
-	</script>
 	<h1>物件<?php print $purpose ?></h1>
 
 	<form name="form" id="form" action="index.php" method="post">
@@ -201,8 +199,7 @@ function subArticleEdit()
 		<input type="hidden" name="sRoom" value="<?php print $sRoom ?>" />
 		<input type="hidden" name="sKeyPlace" value="<?php print $sKeyPlace  ?>" />
 		<input type="hidden" name="sKeyBox" value="<?php print $sKeyBox ?>" />
-		<input type="hidden" name="sDueDTFrom" value="<?php print $sDueDTFrom ?>" />
-		<input type="hidden" name="sDueDTTo" value="<?php print $sDueDTTo ?>" />
+		<input type="hidden" name="sdrawing" value="<?php print $drawing ?>" />
 		<input type="hidden" name="sSellCharge" value="<?php print $sSellCharge ?>" />
 		<input type="hidden" name="orderBy" value="<?php print $orderBy ?>" />
 		<input type="hidden" name="orderTo" value="<?php print $orderTo ?>" />
