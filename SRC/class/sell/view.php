@@ -151,10 +151,10 @@ function subSellView($param)
 						<td class="list_td<?php print $i ?>"><?php print $article ?></td>
 						<td class="list_td<?php print $i ?>"><?php print $address ?></td>
 						<td class="list_td<?php print $i ?>"><?php print $station ?></td>
-						<td class="list_td<?php print $i ?>"><?php print $foot ?></td>
-						<td class="list_td<?php print $i ?>"><?php print $years ?></td>
-						<td class="list_td<?php print $i ?>"><?php print $floor ?></td>
-						<td class="list_td<?php print $i ?>" align="right"><?php print $area ?></td>
+						<td class="list_td<?php print $i ?>"><?php print $foot ?>分</td>
+						<td class="list_td<?php print $i ?>"><?php print $years ?>年</td>
+						<td class="list_td<?php print $i ?>"><?php print $floor ?>階</td>
+						<td class="list_td<?php print $i ?>" align="right"><?php print $area ?>㎡</td>
 						<td class="list_td<?php print $i ?>"><?php print $seller ?></td>
 						<td class="list_td<?php print $i ?>" align="right"><?php print $price ?>万</td>
 						<td class="list_td<?php print $i ?>"><?php print $note ?></td>
