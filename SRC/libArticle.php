@@ -154,7 +154,7 @@ function subArticleEdit()
 	$sKeyPlace    = htmlspecialchars($_REQUEST['sKeyPlace']);
 	$sArticleNote = htmlspecialchars($_REQUEST['sArticleNote']);
 	$sKeyBox      = htmlspecialchars($_REQUEST['sKeyBox']);
-	$drawing     = htmlspecialchars($_REQUEST["drawing"]);
+	$drawing     = htmlspecialchars($_REQUEST["sDrawing"]);
 	$sSellCharge  = htmlspecialchars($_REQUEST['sSellCharge']);
 
 	$orderBy = $_REQUEST['orderBy'];
@@ -175,7 +175,7 @@ function subArticleEdit()
 		$address     = htmlspecialchars($row["ADDRESS"]);
 		$articleNote = htmlspecialchars($row["ARTICLENOTE"]);
 		$keyBox      = htmlspecialchars($row["KEYBOX"]);
-		$drawing     = htmlspecialchars($row["drawing"]);
+		$drawing     = htmlspecialchars($row["DRAWING"]);
 		$sellCharge  = htmlspecialchars($row["SELLCHARGE"]);
 
 
