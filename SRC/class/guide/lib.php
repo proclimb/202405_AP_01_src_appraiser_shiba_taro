@@ -59,8 +59,6 @@ function hiddenForm2($param, $name = array(), $cnt = 0)
         } else {
             // ここに来たらデータは渡せなくなる
             foreach ($param as $key => $value) {
-                echo "lib.phpline62";
-                var_dump($param);
                 $str = htmlspecialchars($value, ENT_QUOTES);
                 print("<input type=\"hidden\" name=\"\" value=\"$str\" />\n");
             }
